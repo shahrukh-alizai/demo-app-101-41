@@ -25,13 +25,6 @@ class CustomText(models.Model):
 
 class HomePage(models.Model):
     body = models.TextField()
-    new_field = models.ForeignKey(
-        "home.Demo",
-        on_delete=models.CASCADE,
-        null=True,
-        blank=True,
-        related_name="homepage_new_field",
-    )
 
     @property
     def api(self):
@@ -40,20 +33,3 @@ class HomePage(models.Model):
     @property
     def field(self):
         return "body"
-
-
-class Demo(models.Model):
-    "Generated Model"
-    name = models.CharField(
-        max_length=256,
-    )
-    link = models.ForeignKey(
-        "home.CustomText",
-        null=True,
-        blank=True,
-        on_delete=models.CASCADE,
-        related_name="demo_link",
-    )
-
-    class Meta:
-        verbose_name_plural = "Custom Demo verbose"
