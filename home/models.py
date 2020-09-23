@@ -40,6 +40,13 @@ class Demo(models.Model):
     name = models.CharField(
         max_length=256,
     )
+    link = models.ForeignKey(
+        "home.CustomText",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name="demo_link",
+    )
 
     class Meta:
         verbose_name_plural = "Custom Demo verbose"
