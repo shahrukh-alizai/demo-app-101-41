@@ -25,6 +25,13 @@ class CustomText(models.Model):
 
 class HomePage(models.Model):
     body = models.TextField()
+    test = models.ForeignKey(
+        "home.TestModel",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name="homepage_test",
+    )
 
     @property
     def api(self):
@@ -33,3 +40,8 @@ class HomePage(models.Model):
     @property
     def field(self):
         return "body"
+
+
+class TestModel(models.Model):
+    "Generated Model"
+    test = models.BigIntegerField()
