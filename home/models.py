@@ -43,13 +43,3 @@ class Demo(models.Model):
 
     class Meta:
         verbose_name_plural = "Custom Demo verbose"
-
-
-class Student(models.Model):
-    "Generated Model"
-    name = models.CharField(
-        max_length=256,
-    )
-
-    class Meta:
-        verbose_name_plural = "My student"
